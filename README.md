@@ -1,5 +1,4 @@
-
-# EV ChargeOps — Chatbot Inteligente
+ EV ChargeOps — Chatbot Inteligente
 
 > Assistente conversacional com IA para gestão de eletropostos em condomínios,
 > integrado ao ecossistema GoodWe SEMS no contexto do EV Challenge 2026.
@@ -31,6 +30,15 @@ custos é injusto e gera conflitos entre moradores.
 Além disso, síndicos e moradores não dispõem de uma interface simples para
 consultar dados de consumo, sessões de recarga ou alertas do sistema —
 dependendo de dashboards técnicos que exigem conhecimento especializado.
+
+---
+
+## Diferencial Competitivo
+
+Diferente de dashboards tradicionais, o EV ChargeOps elimina a necessidade de
+navegação técnica, permitindo acesso direto aos dados via linguagem natural.
+Síndicos e moradores obtêm respostas precisas sem precisar interpretar gráficos
+ou relatórios complexos.
 
 ---
 
@@ -70,7 +78,7 @@ sobre protocolos, configurações e diagnósticos.
 | **OpenAI API (GPT-4o)** | Modelo de linguagem principal | Alta capacidade de compreensão contextual, ideal para respostas precisas em domínio técnico específico |
 | **LangChain** | Orquestração do fluxo do chatbot | Facilita a injeção de contexto, gerenciamento de histórico de conversa e integração com fontes de dados externas |
 | **Python + Flask** | Backend da API do chatbot | Consistência com o restante da stack do projeto, leveza e facilidade de integração |
-| **API GoodWe SEMS** | Fonte de dados em tempo real | Fornece dados de geração solar, consumo e status dos carregadores diretamente ao contexto do chatbot |
+| **API GoodWe SEMS** | Fonte de dados em tempo real | Os dados são obtidos via endpoints REST da API GoodWe SEMS e normalizados antes de serem injetados no contexto do modelo |
 | **PostgreSQL** | Histórico de sessões e consumo | Permite ao chatbot consultar dados históricos para responder perguntas de períodos específicos |
 
 ---
@@ -104,6 +112,29 @@ graph TD
 
 ---
 
+## Exemplo de Interação
+
+**Pergunta:** Qual apartamento mais consumiu energia este mês?
+
+**Resposta:** O apartamento 302 foi o que mais consumiu energia no período,
+com 245 kWh registrados, resultando em um custo estimado de R$ 198,00.
+
+---
+
+**Pergunta:** O sistema está usando energia solar agora?
+
+**Resposta:** Sim. Neste momento o sistema registra geração solar de 4,2 kW,
+com excedente de 1,8 kW sendo direcionado automaticamente para os carregadores ativos.
+
+---
+
+**Pergunta:** Tem algum restaurante perto do condomínio?
+
+**Resposta:** Só consigo ajudar com questões relacionadas ao EV ChargeOps
+e aos eletropostos do condomínio. Posso te ajudar com algo nessa área?
+
+---
+
 ## Modelo de Teste — Perguntas e Respostas Esperadas
 
 | # | Pergunta | Dentro/Fora do Escopo | Resposta Esperada |
@@ -119,7 +150,6 @@ graph TD
 ---
 
 ## System Prompt Base
-
 [1] IDENTIDADE:
 Você é o assistente inteligente do EV ChargeOps, um sistema de gestão de
 eletropostos para condomínios residenciais integrado à plataforma GoodWe SEMS.
@@ -127,7 +157,9 @@ eletropostos para condomínios residenciais integrado à plataforma GoodWe SEMS.
 O EV ChargeOps monitora e controla eletropostos em condomínios residenciais,
 priorizando o uso de energia solar excedente para recarga de veículos elétricos.
 O sistema realiza medição individual por sessão, aplica regras de rateio e
-prevê picos de demanda com Machine Learning.
+conta com um modelo de previsão de demanda baseado em Machine Learning.
+Os dados são obtidos via endpoints REST da API GoodWe SEMS e normalizados
+antes de serem injetados no contexto do modelo.
 [3] REGRAS:
 
 Responda APENAS sobre o sistema EV ChargeOps e eletropostos do condomínio.
@@ -147,7 +179,11 @@ O condomínio utiliza painéis solares integrados via API GoodWe SEMS
 O sistema prioriza o uso de energia solar excedente para recarga dos veículos
 O rateio de custos é individual, por sessão, seguindo a Resolução ANEEL 1.000/2021
 Os carregadores são monitorados a cada 30 segundos
-Picos de demanda são previstos por um modelo de Machine Learning
+Picos de demanda são previstos por um modelo de previsão de demanda
+baseado em Machine Learning
+
+
+---
 
 ## Conclusão
 
@@ -156,3 +192,8 @@ acessíveis para síndicos e moradores, democratizando o acesso às informaçõe
 do sistema de gestão de energia. Com isso, o projeto avança na direção de uma
 mobilidade elétrica mais transparente, justa e sustentável nos condomínios
 brasileiros.
+
+---
+
+> Projeto desenvolvido para o EV Challenge 2026 — FIAP
+> Disciplina: Cognitive Computing & Chatbots / IA para Devs
