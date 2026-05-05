@@ -1,0 +1,11 @@
+EV ChargeOps — Chatbot Inteligente
+
+Integrantes:
+- Luan de Araujo Carneiro — RM 573691
+- Pedro Sampaio Mochnacs Arruda — RM 573522
+- Raul Sampaio Mochnacs Arruda — RM 573523
+- Lucas Garcia de Britto — RM 571768
+- Kevin Rodrigues de Melo — RM 571777
+
+Link do repositório GitHub:
+https://github.com/pedrosampaiom2007-gif/Sprint-1-Hercules.git 
