@@ -78,7 +78,7 @@ sobre protocolos, configurações e diagnósticos.
 | **OpenAI API (GPT-4o)** | Modelo de linguagem principal | Alta capacidade de compreensão contextual, ideal para respostas precisas em domínio técnico específico |
 | **LangChain** | Orquestração do fluxo do chatbot | Facilita a injeção de contexto, gerenciamento de histórico de conversa e integração com fontes de dados externas |
 | **Python + Flask** | Backend da API do chatbot | Consistência com o restante da stack do projeto, leveza e facilidade de integração |
-| **API GoodWe SEMS** | Fonte de dados em tempo real | Os dados são obtidos via endpoints REST da API GoodWe SEMS e normalizados antes de serem injetados no contexto do modelo |
+| **API GoodWe SEMS** | Fonte de dados em tempo real | Dados simulados (mock) estruturados conforme o padrão da API GoodWe SEMS, permitindo validação da integração |
 | **PostgreSQL** | Histórico de sessões e consumo | Permite ao chatbot consultar dados históricos para responder perguntas de períodos específicos |
 
 ---
