@@ -73,7 +73,43 @@ alertas de demanda e cobrança — sem necessidade de acesso ao dashboard técni
 
 ## Fluxo de Funcionamento
 
-O fluxograma completo está disponível na pasta `/docs` do repositório.
+FLuxograma:
+
+## Fluxograma
+
+```mermaid
+graph TD
+
+    A[Usuário<br/>(Síndico ou Morador)]
+    B[Backend<br/>Python + Flask]
+    C{LangChain<br/>Orquestrador}
+
+    D[System Prompt<br/>Regras GoodWe]
+    E{Fontes de Dados}
+    F[(API GoodWe SEMS)]
+    G[(PostgreSQL<br/>Histórico de Consumo)]
+
+    H[Pacote de Contexto]
+    I[OpenAI GPT-4o]
+    J[Resposta Contextualizada]
+
+    A -->|Pergunta via Interface| B
+    B --> C
+
+    C -->|Injeta regras| D
+    C -->|Busca dados| E
+
+    E --> F
+    E --> G
+
+    F --> H
+    G --> H
+    D --> H
+
+    H --> I
+    I -->|Resposta natural| J
+    J -->|Retorno via API| A
+```
 
 Resumo do fluxo:
 
