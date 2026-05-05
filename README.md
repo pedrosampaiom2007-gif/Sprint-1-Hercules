@@ -73,28 +73,7 @@ alertas de demanda e cobrança — sem necessidade de acesso ao dashboard técni
 
 ## Fluxo de Funcionamento
 
-FLuxograma:
 
-## Fluxograma
-
-graph TD
-
-A["Usuário<br>(Síndico ou Morador)"]
-B["Backend<br>Python + Flask"]
-C["LangChain<br>Orquestrador"]
-D["System Prompt<br>Regras GoodWe"]
-E["Fontes de Dados"]
-F["API GoodWe SEMS"]
-G["PostgreSQL<br>Histórico de Consumo"]
-H["Pacote de Contexto"]
-
-A --> B
-B --> C
-C --> D
-C --> E
-E --> F
-E --> G
-C --> H
 
 Resumo do fluxo:
 
