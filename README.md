@@ -204,4 +204,4 @@ brasileiros.
 ---
 
 > Projeto desenvolvido para o EV Challenge 2026 — FIAP
-> Disciplina: Cognitive Computing & Chatbots / IA para Devs
+> Projeto desenvolvido para a matéria de Prompt and Artificial Intelligence
