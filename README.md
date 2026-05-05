@@ -73,7 +73,26 @@ alertas de demanda e cobrança — sem necessidade de acesso ao dashboard técni
 
 ## Fluxo de Funcionamento
 
+```mermaid
+graph TD
 
+A["Usuario - Sindico ou Morador"]
+B["Backend - Python Flask"]
+C["LangChain - Orquestrador"]
+D["System Prompt - Regras GoodWe"]
+E["Fontes de Dados"]
+F["API GoodWe SEMS"]
+G["PostgreSQL - Historico"]
+H["Pacote de Contexto"]
+
+A --> B
+B --> C
+C --> D
+C --> E
+E --> F
+E --> G
+C --> H
+```
 
 Resumo do fluxo:
 
