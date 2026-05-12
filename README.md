@@ -75,7 +75,7 @@ sobre protocolos, configurações e diagnósticos.
 
 | Tecnologia | Função | Justificativa |
 |------------|--------|---------------|
-| **OpenAI API (GPT-4o)** | Modelo de linguagem principal | Alta capacidade de compreensão contextual, ideal para respostas precisas em domínio técnico específico |
+| Ollama Cloud | Modelo de linguagem principal | Alta capacidade de compreensão contextual, ideal para respostas precisas em domínio técnico específico |
 | **LangChain** | Orquestração do fluxo do chatbot | Facilita a injeção de contexto, gerenciamento de histórico de conversa e integração com fontes de dados externas |
 | **Python + Flask** | Backend da API do chatbot | Consistência com o restante da stack do projeto, leveza e facilidade de integração |
 | **API GoodWe SEMS** | Fonte de dados em tempo real | Dados simulados (mock) estruturados conforme o padrão da API GoodWe SEMS, permitindo validação da integração |
@@ -96,7 +96,7 @@ graph TD
     F --> H[Pacote de Contexto Completo]
     G --> H
     D --> H
-    H --> I[OpenAI GPT-4o]
+    H --> I[Ollama Cloud]
     I -->|Gera Resposta Natural| J[Resposta Contextualizada]
     J -->|Retorna via API| A
 ```
@@ -107,7 +107,7 @@ graph TD
 2. A mensagem é recebida pelo backend Flask
 3. LangChain injeta o system prompt com o contexto do EV ChargeOps
 4. Se necessário, o sistema consulta a API GoodWe SEMS ou o banco de dados
-5. O modelo GPT-4o processa a pergunta com o contexto completo
+5. O modelo Ollama Cloud processa a pergunta com o contexto completo
 6. A resposta é gerada em linguagem natural e retornada ao usuário
 
 ---
